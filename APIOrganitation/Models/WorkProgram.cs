@@ -12,7 +12,7 @@ public class WorkProgram
     [Required, Column("name"), MaxLength(50)]
     public string Name { get; set; }
     [Required, Column("member_nim", TypeName = "nchar(5)")]
-    public string Member_Nim { get; set; }
+    public string MemberNim { get; set; }
     [Required, Column("department id")]
     public int DepartmentId { get; set; }
     [Required, Column("satrt date")]
@@ -26,7 +26,9 @@ public class WorkProgram
 
     //cardinality
     [JsonIgnore]
+    [ForeignKey(nameof(MemberNim))]
     public Account? Account { get; set; }
     [JsonIgnore]
+    [ForeignKey(nameof(DepartmentId))]
     public Department? Department { get; set; }
 }

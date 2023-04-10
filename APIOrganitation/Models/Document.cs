@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.Identity.Client;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -24,8 +25,10 @@ namespace APIOrganitation.Models
 
         //cardinality
         [JsonIgnore]
+        [ForeignKey(nameof(MemberNim))]
         public Account? Account { get; set; }
         [JsonIgnore]
+        [ForeignKey(nameof(DocumentTypeId))]
         public DocumentType? DocumentType { get; set; }
     }
 }

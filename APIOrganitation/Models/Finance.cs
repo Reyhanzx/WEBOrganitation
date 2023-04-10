@@ -26,6 +26,7 @@ namespace APIOrganitation.Models
 
         //cardinality
         [JsonIgnore]
+        [ForeignKey(nameof(MemberNim))]
         public Account? Account { get; set; }
     }
 }
