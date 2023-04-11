@@ -10,9 +10,9 @@ namespace APIOrganitation.Controllers
     [Route("api/[controller]")]
     [ApiController]
     //[Authorize]
-    public class DepatrmentsController : BaseController<int, Department, DepartmentRepository>
+    public class DepartmentsController : BaseController<int, Department, DepartmentRepository>
     {
-        public DepatrmentsController(DepartmentRepository repository) : base(repository)
+        public DepartmentsController(DepartmentRepository repository) : base(repository)
         {
         }
     }
